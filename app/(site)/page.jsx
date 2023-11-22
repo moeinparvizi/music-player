@@ -1,9 +1,9 @@
-import { Fragment } from 'react'
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
-    <Fragment>
-      <div className='text-green-500'>salam</div>
-    </Fragment>
-  )
+    <div className="flex flex-col bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
+      <Header />
+    </div>
+  );
 }

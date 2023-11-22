@@ -7,6 +7,7 @@ import { BiSearch } from "react-icons/bi";
 import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 import Library from "./Library";
+import { motion } from "framer-motion";
 
 const Sidebar = ({ children }) => {
   const pathname = usePathname();
@@ -32,7 +33,9 @@ const Sidebar = ({ children }) => {
 
   return (
     <div className="flex h-full">
-      <div
+      <motion.div
+        initial={{ overflow: 0, x: -300 }}
+        whileInView={{ overflow: 1, x: 0 }}
         className="
           hidden
           md:flex
@@ -54,21 +57,16 @@ const Sidebar = ({ children }) => {
               py-4
             "
           >
-            {items.map(val => (
-              <SidebarItem
-                key={val.label}
-                {...val}
-              />
+            {items.map((val) => (
+              <SidebarItem key={val.label} {...val} />
             ))}
           </div>
         </Box>
         <Box className="overflow-y-auto h-full">
           <Library />
         </Box>
-      </div>
-      <main className="h-full flex-1 overflow-y-auto py-2">
-        {children}
-      </main>
+      </motion.div>
+      <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
     </div>
   );
 };
