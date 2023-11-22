@@ -15,9 +15,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        {/* text */}
+        {/* text
         <div className="flex gap-2">{children} # this is a test</div>
-        {/* text */}
+        text */}
 
         <Slidebar>{children}</Slidebar>
       </body>
