@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { IconType } from "react-icons";
 import { twMerge } from "tailwind-merge";
 
-const SidebarItem = ({ IconType, label, active, href }) => {
+
+
+const SidebarItem = ({ icon: Icon, label, active, href }) => {
   return (
     <Link
       href={href}
@@ -24,7 +25,8 @@ const SidebarItem = ({ IconType, label, active, href }) => {
         active && "text-white"
       )}
     >
-      link
+      <Icon size={26} />
+      <p className="truncate w-full">{label}</p>
     </Link>
   );
 };

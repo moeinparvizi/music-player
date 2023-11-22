@@ -15,10 +15,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        {/* text
-        <div className="flex gap-2">{children} # this is a test</div>
-        text */}
-
         <Slidebar>{children}</Slidebar>
       </body>
     </html>
