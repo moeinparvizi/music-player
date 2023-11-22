@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
+
 
 const Box = ({ children, className }) => {
   return (

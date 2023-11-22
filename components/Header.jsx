@@ -5,6 +5,9 @@ import { useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 import { RxCaretLeft } from "react-icons/rx";
 import { RxCaretRight } from "react-icons/rx";
+import { HiHome } from "react-icons/hi";
+import { BiSearch } from "react-icons/bi";
+import Button from "./Button";
 
 const Header = ({ children, className }) => {
   const router = useRouter();
@@ -39,7 +42,36 @@ const Header = ({ children, className }) => {
             <RxCaretRight className="text-white" size={35} />
           </button>
         </motion.div>
+        <div className="flex md:hidden gap-x-2 items-center">
+          <button className="rounded-full p-2 bg-white flex justify-center items-center hover:opacity-75 trasition">
+            <HiHome size={20} className="text-black" />
+          </button>
+          <button className="rounded-full p-2 bg-white flex justify-center items-center hover:opacity-75 trasition">
+            <BiSearch size={20} className="text-black" />
+          </button>
+        </div>
+        <div className="flex justify-center items-center gap-x-3">
+          <>
+            <div>
+              <Button
+                onClick={() => {}}
+                className="bg-transparent text-neutral-300 capitalize px-6 py-2"
+              >
+                sign up
+              </Button>
+            </div>
+            <div>
+              <Button
+                onClick={() => {}}
+                className="bg-white capitalize px-6 py-2"
+              >
+                log in
+              </Button>
+            </div>
+          </>
+        </div>
       </div>
+      {children}
     </div>
   );
 };
