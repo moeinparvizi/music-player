@@ -28,7 +28,7 @@ const SongsItem = ({song, onClick}) => {
       ">
 
       </div>
-      {song}
+      {song.title}
     </div>
   );
 }

@@ -5,35 +5,9 @@ import { useEffect, useRef, useState } from "react";
 
 const PageContent = ({ songs }) => {
   const [data, setData] = useState([])
-    // {
-    // id : 1,
-    // title : "Like You Do",
-    // artist : "joji",
-    // audio : "/audios/like-you-do.mp3",
-    // image : "/images/songs/joji-nectar.png"
-    // },
-    // {
-    // id : 1,
-    // title : "Like You Do",
-    // artist : "joji",
-    // audio : "/audios/like-you-do.mp3",
-    // image : "/images/songs/joji-nectar.png"
-    // }
-
-
-  // const [songsitem, setSongsitem] = useState();
-
-  // const ref = useRef();
 
   const url = "/text.JSON";
 
-  // const url = {
-  //   "id" : 1,
-  //   "title" : "Like You Do",
-  //   "artist" : "joji",
-  //   "audio" : "/audios/like-you-do.mp3",
-  //   "image" : "/images/songs/joji-nectar.png"
-  // }
 
   async function imageSender() {
     const responsive = await fetch(url);
@@ -50,16 +24,6 @@ const PageContent = ({ songs }) => {
     return <div className="mt-4 text-neutral-400">No songs available</div>;
   }
 
-  // const returnData = () => {
-  //   if (data !== null || data !== "") {
-  //     console.log(data);
-  //     data?.map((val) => {
-  //       <p>khodam</p>
-  //     });
-  //   }
-  //   console.log(songsitem);
-  //   return songsitem;
-  // };
   return (
     <div
       id="martike"
