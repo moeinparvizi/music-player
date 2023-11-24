@@ -35,6 +35,7 @@ function SimpleDialog(props) {
           <div className="w-full [&>div]:rounded-md mt-3 [&>div]:text-center flex flex-col gap-1">
             <div className="bg-white p-3 flex justify-center items-center gap-2">
               <Image
+                alt="github image"
                 src="/images/githubModel.png"
                 width={20}
                 height={20}
@@ -46,6 +47,7 @@ function SimpleDialog(props) {
             </div>
             <div className="bg-white p-3 flex justify-center items-center gap-2">
               <Image
+                alt="google image"
                 src="/images/googleModel.png"
                 width={20}
                 height={20}
