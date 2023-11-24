@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const SongsItem = ({song, onClick}) => {
   return (
     <div
@@ -28,6 +30,7 @@ const SongsItem = ({song, onClick}) => {
       ">
 
       </div>
+        <Image className="absolute object-cover top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2" width={300} height={300} src={song.image} alt={song.title} />
       {song.title}
     </div>
   );
