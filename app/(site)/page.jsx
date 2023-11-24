@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
+import PageContent from "./components/PageContent";
 
 export default function Home() {
   return (
@@ -32,9 +33,7 @@ export default function Home() {
             newest songs
           </h1>
         </div>
-        <div>
-          list of songs
-        </div>
+        <PageContent />
       </div>
     </div>
   );
