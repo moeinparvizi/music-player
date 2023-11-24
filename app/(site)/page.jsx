@@ -33,7 +33,7 @@ export default function Home() {
             newest songs
           </h1>
         </div>
-        <PageContent />
+        <PageContent songs={['moein','parvizi','moradneh']} />
       </div>
     </div>
   );
