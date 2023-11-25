@@ -2,12 +2,29 @@
 
 import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
+import MediaItem from "./MediaItem";
+import { useEffect, useState } from "react";
 
 const Library = () => {
   const onClick = () => {
     // handle upload later
     console.log("ai out line plus icon test");
   };
+
+  const [data, setData] = useState([])
+
+  const url = "/text.JSON";
+
+
+  async function imageSender() {
+    const responsive = await fetch(url);
+    const audio = await responsive.json();
+    setData(audio);
+  }
+
+  useEffect(() => {
+    imageSender();
+  }, []);
 
   return (
     <div className="flex flex-col">
@@ -22,7 +39,9 @@ const Library = () => {
           onClick={onClick}
         />
       </div>
-      <div className="flex flex-col gap-y-2 mt-4 px-3">List Of Songs</div>
+      <div className="flex flex-col gap-y-2 mt-4 px-3">
+      {data.map(val => <div key={val.id}><MediaItem song={val} onClick={'slam'} /></div>)}
+      </div>
     </div>
   );
 };

@@ -40,8 +40,6 @@ const PageContent = ({ songs }) => {
       mt-4
     "
     >
-      {/* {returnData()} */}
-      {console.log(data)}
       {data.map(val => <div key={val.id}><SongsItem song={val} onClick={'slam'} /></div>)}
     </div>
   );
