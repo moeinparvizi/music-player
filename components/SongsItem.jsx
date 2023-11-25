@@ -1,6 +1,7 @@
 import Image from "next/image";
+import PlayButton from "./PlayButton";
 
-const SongsItem = ({song, onClick}) => {
+const SongsItem = ({ song, onClick }) => {
   return (
     <div
       className="
@@ -20,20 +21,38 @@ const SongsItem = ({song, onClick}) => {
         p-3
       "
     >
-      <div className="
+      <div
+        className="
         relative
         aspect-square
         w-full
         h-full
         rounded-md
         overflow-hidden
-      ">
-
+      "
+      >
+      <Image
+        className="object-cover"
+        // width={300}
+        // height={300}
+        fill
+        src={song.image}
+        alt={song.title}
+      />
       </div>
-        <Image className="absolute object-cover top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2" width={300} height={300} src={song.image} alt={song.title} />
-      {song.title}
+      <div className="flex flex-col items-start p-4 w-full gap-y1">
+        <p className="font-semibold truncate w-full">
+          {song.title}
+        </p>
+        <p className="w-full text-sm pb-4 truncate text-neutral-400">
+          {song.artist}
+        </p>
+      </div>
+      <div className="absolute bottom-24 right-5">
+        <PlayButton />
+      </div>
     </div>
   );
-}
+};
 
 export default SongsItem;
