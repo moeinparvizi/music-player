@@ -11,10 +11,9 @@ const Library = () => {
     console.log("ai out line plus icon test");
   };
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   const url = "/text.JSON";
-
 
   async function imageSender() {
     const responsive = await fetch(url);
@@ -40,7 +39,11 @@ const Library = () => {
         />
       </div>
       <div className="flex flex-col gap-y-2 mt-4 px-3">
-      {data.map(val => <div key={val.id}><MediaItem song={val} onClick={'slam'} /></div>)}
+        {data.map((val) => (
+          <div key={val.id}>
+            <MediaItem song={val} onClick={() => {}} />
+          </div>
+        ))}
       </div>
     </div>
   );
