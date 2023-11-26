@@ -22,7 +22,7 @@ const SearchContent = ({ value }) => {
     if (val != "") {
       let result = item.title.search(val);
       if (result == 0) {
-        return <div>{item.title}</div>;
+        return <div className="flex flex-col gap-y-2 w-full px-6 text-neutral-400">{item.title}</div>;
       }
     }
   };
