@@ -1,14 +1,16 @@
 [
   {
     "id" : 1,
-    "title" : "Like You Do",
+    "title" : "like you do",
+    "albume" : "nectar",
     "artist" : "joji",
     "audio" : "/audios/like-you-do.mp3",
     "image" : "/images/songs/joji-nectar.png"
   },
   {
     "id" : 2,
-    "title" : "Test Drive",
+    "title" : "test drive",
+    "albume" : "single tranck",
     "artist" : "joji",
     "audio" : "/audios/like-you-do.mp3",
     "image" : "/images/songs/joji-testDrive.jpg"
