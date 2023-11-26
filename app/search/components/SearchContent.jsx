@@ -1,10 +1,10 @@
+import LikeButton from "@/components/LikeButton";
 import MediaItem from "@/components/MediaItem";
 import { useEffect, useState } from "react";
 
 const SearchContent = ({ value }) => {
   const [val, setVal] = useState("");
   const [songs, setSongs] = useState([]);
-  const [flag, setFlag] = useState(true);
 
   const url = "/text.JSON";
 
@@ -27,8 +27,10 @@ const SearchContent = ({ value }) => {
       if (result == 0 || result2 == 0 || result3 == 0) {
         return (
           <div className="flex items-center gap-x-4 w-full">
-            {/* {item.title} */}
-            <MediaItem song={item} onClick={() => {}} />
+            <div className="flex-1">
+              <MediaItem song={item} onClick={() => {}} />
+            </div>
+            <LikeButton songId={item.id} />
           </div>
         );
       }
@@ -40,12 +42,16 @@ const SearchContent = ({ value }) => {
     return (
       // ? change this value in div
       <div className="flex flex-col gap-y-2 w-full px-6 text-neutral-400 capitalize text-lg">
-        you can search in up input
+        you can search in input
       </div>
     );
   }
 
-  return <div className="flex flex-col gap-y-2 w-full px-6">{songs.map((item) => valCondition(item))}</div>;
+  return (
+    <div className="flex flex-col gap-y-2 w-full px-6">
+      {songs.map((item) => valCondition(item))}
+    </div>
+  );
 };
 
 export default SearchContent;
