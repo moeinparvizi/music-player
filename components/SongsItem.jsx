@@ -1,7 +1,7 @@
 import Image from "next/image";
 import PlayButton from "./PlayButton";
 
-const SongsItem = ({ song, onClick }) => {
+const SongsItem = ({ song }) => {
   return (
     <div
       className="
