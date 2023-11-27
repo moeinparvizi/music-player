@@ -1,10 +1,15 @@
 import LikeButton from "@/components/LikeButton";
 import MediaItem from "@/components/MediaItem";
+import Player from "@/components/Player";
 import { useEffect, useState } from "react";
 
 const SearchContent = ({ value }) => {
   const [val, setVal] = useState("");
   const [songs, setSongs] = useState([]);
+  const [onPlay, setOnPlay] = useState({
+    status: "off",
+    song: "",
+  });
 
   const url = "/text.JSON";
 
@@ -26,7 +31,12 @@ const SearchContent = ({ value }) => {
       const result3 = item.albume.search(val);
       if (result == 0 || result2 == 0 || result3 == 0) {
         return (
-          <div className="flex items-center gap-x-4 w-full">
+          <div onClick={() => {
+            setOnPlay({
+              status: "on",
+              song: item
+            })
+          }} className="flex items-center gap-x-4 w-full">
             <div className="flex-1">
               <MediaItem song={item} onClick={() => {}} />
             </div>
@@ -40,7 +50,6 @@ const SearchContent = ({ value }) => {
   // when empty input
   if (val == "") {
     return (
-      // ? change this value in div
       <div className="flex flex-col gap-y-2 w-full px-6 text-neutral-400 capitalize text-lg">
         you can search in input
       </div>
@@ -50,6 +59,12 @@ const SearchContent = ({ value }) => {
   return (
     <div className="flex flex-col gap-y-2 w-full px-6">
       {songs.map((item) => valCondition(item))}
+      <Player
+        songs={songs}
+        song={onPlay.song}
+        onPlay={onPlay}
+        setOnPlay={setOnPlay}
+      />
     </div>
   );
 };

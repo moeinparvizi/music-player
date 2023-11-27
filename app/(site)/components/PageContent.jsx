@@ -3,7 +3,7 @@
 import Player from "@/components/Player";
 import SongsItem from "@/components/SongsItem";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const PageContent = ({ songs }) => {
   const [data, setData] = useState([]);
@@ -32,7 +32,6 @@ const PageContent = ({ songs }) => {
   return (
     <div
       id="martike"
-      // ref={ref}
       className="
       grid
       grid-cols-2
@@ -50,19 +49,22 @@ const PageContent = ({ songs }) => {
           initial={{ opacity: 0, y: -500 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 0 + i / 2 } }}
           key={val.id}
-            onClick={() => {
-              setOnPlay({
-                status: "on",
-                song: val,
-              });
-            }}
+          onClick={() => {
+            setOnPlay({
+              status: "on",
+              song: val,
+            });
+          }}
         >
-          <SongsItem
-            song={val}
-          />
+          <SongsItem song={val} />
         </motion.div>
       ))}
-      <Player songs={data} song={onPlay.song} onPlay={onPlay} setOnPlay={setOnPlay} />
+      <Player
+        songs={data}
+        song={onPlay.song}
+        onPlay={onPlay}
+        setOnPlay={setOnPlay}
+      />
     </div>
   );
 };
