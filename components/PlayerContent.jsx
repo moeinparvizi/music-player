@@ -16,17 +16,30 @@ const PlayerContent = ({ song, songs }) => {
   const [volume, setVolume] = useState();
   const [timeLine, setTimeLine] = useState(0);
   const [durMusic, setDurMusic] = useState();
+  const [songPlay, setSongPlay] = useState(song)
+
+  const [count, setCount] = useState(song.id)
 
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
 
   const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
 
   const onPlayNext = () => {
-    console.log("next");
+    songs.map(val => {
+      if ((val.id == (count + 1))){
+        setSongPlay(val)
+        setCount(val.id)
+      }
+    })
   };
 
   const onPlayPrevious = () => {
-    console.log("prev");
+    songs.map(val => {
+      if ((val.id == (count - 1))){
+        setSongPlay(val)
+        setCount(val.id)
+      }
+    })
   };
 
   const handlePlay = () => {
@@ -91,11 +104,11 @@ const PlayerContent = ({ song, songs }) => {
         />
         <div className="flex w-full justify-start">
           <div className="flex items-center gap-x-4">
-            <MediaItem song={song} />
-            <LikeButton songId={song.id} />
+            <MediaItem song={songPlay} />
+            <LikeButton songId={songPlay.id} />
           </div>
         </div>
-        <audio ref={ref} src={song.audio}></audio>
+        <audio ref={ref} src={songPlay.audio}></audio>
 
         <div
           className="

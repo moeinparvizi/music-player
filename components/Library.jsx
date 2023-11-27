@@ -4,11 +4,12 @@ import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
 import MediaItem from "./MediaItem";
 import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Library = () => {
   const onClick = () => {
     // handle upload later
-    console.log("ai out line plus icon test");
+    toast.error('for next version')
   };
 
   const [data, setData] = useState([]);
@@ -44,6 +45,27 @@ const Library = () => {
             <MediaItem song={val} onClick={() => {}} />
           </div>
         ))}
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+
+          // Default options for specific types
+          success: {
+            duration: 3000,
+            theme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+        }}
+      />
       </div>
     </div>
   );
