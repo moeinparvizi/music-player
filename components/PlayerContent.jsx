@@ -10,14 +10,43 @@ import MediaItem from "./MediaItem";
 import { Slider } from "@mui/material";
 import { motion } from "framer-motion";
 
-const PlayerContent = ({ song }) => {
+const PlayerContent = ({ song, songs }) => {
   const ref = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState();
 
+  const [music, setMusic] = useState(song)
+  const [flag, setFlag] = useState()
+  const [flagn, setFlagn] = useState()
+
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
 
   const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
+
+  const onPlayNext = () => {
+    console.log('next');
+    songs.map(val => {
+      if (val.id == song.id){
+        setFlag(song.id + 1)
+        handlePlay()
+      }
+      if (val.id == flag) {
+        setMusic(val)
+      }
+    })
+  }
+
+  const onPlayPrevious = () => {
+    console.log('prev');
+    songs.map(val => {
+      if (val.id == music){
+        setFlag(song.id - 1)
+      }
+      if (val.id == flagn) {
+        setMusic(val)
+      }
+    })
+  }
 
   const handlePlay = () => {
     if (isPlaying) {
@@ -27,6 +56,9 @@ const PlayerContent = ({ song }) => {
     }
     setIsPlaying(!isPlaying);
   };
+  useEffect(()=> {
+    handlePlay()
+  },[song])
 
   const toggleMute = () => {
     if (ref.current.volume == '0') {
@@ -39,8 +71,6 @@ const PlayerContent = ({ song }) => {
   }
 
   const handleVolume = (e) => {
-    // console.log(e.target.value / 100);
-    // setVolume(100)
     ref.current.volume = e.target.value / 100
   }
 
@@ -105,7 +135,7 @@ const PlayerContent = ({ song }) => {
           "
       >
         <AiFillStepBackward
-          // onClick={onPlayPrevious}
+          onClick={onPlayPrevious}
           size={30}
           className="
               text-neutral-400
@@ -131,7 +161,7 @@ const PlayerContent = ({ song }) => {
           <Icon size={30} className="text-black" />
         </div>
         <AiFillStepForward
-          // onClick={onPlayNext}
+          onClick={onPlayNext}
           size={30}
           className="
               text-neutral-400

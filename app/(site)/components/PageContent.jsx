@@ -62,7 +62,7 @@ const PageContent = ({ songs }) => {
           />
         </motion.div>
       ))}
-      <Player song={onPlay.song} onPlay={onPlay} setOnPlay={setOnPlay} />
+      <Player songs={data} song={onPlay.song} onPlay={onPlay} setOnPlay={setOnPlay} />
     </div>
   );
 };
