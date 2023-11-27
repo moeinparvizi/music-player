@@ -12,7 +12,7 @@ const LikeButton = ({ songId }) => {
   const handleLike = () => {
     setIsLiked(!isLiked);
     if (!isLiked) {
-      toast("Successfully");
+      toast.success("Successfully");
     }
   };
   return (
