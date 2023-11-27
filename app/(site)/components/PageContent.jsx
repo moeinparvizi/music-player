@@ -10,7 +10,7 @@ const PageContent = ({ songs }) => {
 
   const [onPlay, setOnPlay] = useState({
     status: "off",
-    id: "",
+    song: "",
   });
 
   const url = "/text.JSON";
@@ -53,7 +53,7 @@ const PageContent = ({ songs }) => {
             onClick={() => {
               setOnPlay({
                 status: "on",
-                id: val.id,
+                song: val,
               });
             }}
         >
@@ -62,7 +62,7 @@ const PageContent = ({ songs }) => {
           />
         </motion.div>
       ))}
-      <Player onPlay={onPlay} setOnPlay={setOnPlay} />
+      <Player song={onPlay.song} onPlay={onPlay} setOnPlay={setOnPlay} />
     </div>
   );
 };
