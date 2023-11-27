@@ -17,12 +17,15 @@ const PlayerContent = ({ song, songs }) => {
   const [timeLine, setTimeLine] = useState(0);
   const [durMusic, setDurMusic] = useState();
   const [songPlay, setSongPlay] = useState(song)
+  // setSongPlay(song)
 
   const [count, setCount] = useState(song.id)
 
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
 
   const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
+
+  console.log(song);
 
   const onPlayNext = () => {
     songs.map(val => {
@@ -52,6 +55,7 @@ const PlayerContent = ({ song, songs }) => {
   };
   useEffect(() => {
     handlePlay();
+    setSongPlay(song)
   }, [song]);
 
   const toggleMute = () => {
