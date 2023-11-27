@@ -9,10 +9,90 @@
   },
   {
     "id" : 2,
+    "title" : "magic",
+    "albume" : "ghost stories",
+    "artist" : "coldplay",
+    "audio" : "/audios/coldplay-magic.mp3",
+    "image" : "/images/songs/magic.jpeg"
+  },
+  {
+    "id" : 3,
+    "title" : "alone again",
+    "albume" : "after hours",
+    "artist" : "the weekend",
+    "audio" : "/audios/weekend-anlone-again.m4a",
+    "image" : "/images/songs/alone-again.jpeg"
+  },
+  {
+    "id" : 4,
+    "title" : "closer",
+    "albume" : "single track",
+    "artist" : "ane brun",
+    "audio" : "/audios/anebrun-closer.mp3",
+    "image" : "/images/songs/closer.jpg"
+  },
+  {
+    "id" : 5,
     "title" : "test drive",
     "albume" : "single tranck",
     "artist" : "joji",
     "audio" : "/audios/test-drive.mp3",
     "image" : "/images/songs/joji-testDrive.jpg"
-  }
+  },
+  {
+    "id" : 6,
+    "title" : "call out my name",
+    "albume" : "my dear melancholy",
+    "artist" : "the weekend",
+    "audio" : "/audios/weekend-calloutmyname.mp3",
+    "image" : "/images/songs/calloutmyname.jpeg"
+  },
+  {
+    "id" : 7,
+    "title" : "something in the way",
+    "albume" : "nevermind",
+    "artist" : "nirvana",
+    "audio" : "/audios/somethingintheway.mp3",
+    "image" : "/images/songs/Nevermind.webp"
+  },
+  {
+    "id" : 8,
+    "title" : "die for me",
+    "albume" : "hollywood`s bleeding",
+    "artist" : "post malone",
+    "audio" : "/audios/dieforme.mp3",
+    "image" : "/images/songs/post.jpeg"
+  },
+  {
+    "id" : 9,
+    "title" : "baller",
+    "albume" : "single track",
+    "artist" : "the nav",
+    "audio" : "/audios/baller.mp3",
+    "image" : "/images/songs/baller.jpeg"
+  },
+  {
+    "id" : 10,
+    "title" : "circles",
+    "albume" : "single track",
+    "artist" : "post malone",
+    "audio" : "/audios/malon-circles.mp3",
+    "image" : "/images/songs/circles.png"
+  },
+  {
+    "id" : 11,
+    "title" : "i know",
+    "albume" : "utopia",
+    "artist" : "travis scott",
+    "audio" : "/audios/iknow.mp3",
+    "image" : "/images/songs/utopia.png"
+  },
+  {
+    "id" : 12,
+    "title" : "drain you",
+    "albume" : "nevermind",
+    "artist" : "nirvana",
+    "audio" : "/audios/somethingintheway.mp3",
+    "image" : "/images/songs/Nevermind.webp"
+  },
 ]
