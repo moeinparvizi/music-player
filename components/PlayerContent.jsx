@@ -11,9 +11,9 @@ import { Slider } from "@mui/material";
 import { motion } from "framer-motion";
 
 const PlayerContent = ({ song }) => {
-  const ref = useRef()
+  const ref = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(1);
+  const [volume, setVolume] = useState();
 
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
 
@@ -28,16 +28,41 @@ const PlayerContent = ({ song }) => {
     setIsPlaying(!isPlaying);
   };
 
+  const toggleMute = () => {
+    if (ref.current.volume == '0') {
+      ref.current.volume = '1'
+      setVolume(1)
+    } else {
+      ref.current.volume = '0'
+      setVolume(0)
+    }
+  }
+
+  const handleVolume = (e) => {
+    // console.log(e.target.value / 100);
+    // setVolume(100)
+    ref.current.volume = e.target.value / 100
+  }
+
   return (
-    <motion.div className="grid grid-cols-2 md:grid-cols-3 h-full">
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 300,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0
+      }}
+      className="grid grid-cols-2 md:grid-cols-3 h-full"
+    >
       <div className="flex w-full justify-start">
         <div className="flex items-center gap-x-4">
           <MediaItem song={song} />
           <LikeButton songId={song.id} />
         </div>
       </div>
-      <audio ref={ref} src={song.audio}>
-      </audio>
+      <audio ref={ref} src={song.audio}></audio>
 
       <div
         className="
@@ -120,11 +145,11 @@ const PlayerContent = ({ song }) => {
       <div className="hidden md:flex w-full justify-end pr-2">
         <div className="flex items-center gap-x-2 w-[120px]">
           <VolumeIcon
-            // onClick={toggleMute}
+            onClick={toggleMute}
             className="cursor-pointer"
             size={34}
           />
-          <Slider value={volume} onChange={(value) => setVolume(value)} />
+          <Slider min={0} max={100} defaultValue={100} value={volume} onChange={handleVolume} />
         </div>
       </div>
     </motion.div>
