@@ -24,7 +24,6 @@ const SerachInput = ({value, setValue}) => {
     router.push(url)
   }, [debouncedValue, router]);
 
-  // console.log(value);
 
   return (
     <div>

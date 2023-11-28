@@ -29,7 +29,6 @@ const Sidebar = ({ children }) => {
     ];
   }, [pathname]);
 
-  // console.log(pathname);
 
   return (
     <div className="flex h-full">

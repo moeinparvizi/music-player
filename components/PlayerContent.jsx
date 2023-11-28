@@ -16,33 +16,31 @@ const PlayerContent = ({ song, songs }) => {
   const [volume, setVolume] = useState();
   const [timeLine, setTimeLine] = useState(0);
   const [durMusic, setDurMusic] = useState();
-  const [songPlay, setSongPlay] = useState(song)
+  const [songPlay, setSongPlay] = useState(song);
   // setSongPlay(song)
 
-  const [count, setCount] = useState(song.id)
+  const [count, setCount] = useState(song.id);
 
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
 
   const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
 
-  console.log(song);
-
   const onPlayNext = () => {
-    songs.map(val => {
-      if ((val.id == (count + 1))){
-        setSongPlay(val)
-        setCount(val.id)
+    songs.map((val) => {
+      if (val.id == count + 1) {
+        setSongPlay(val);
+        setCount(val.id);
       }
-    })
+    });
   };
 
   const onPlayPrevious = () => {
-    songs.map(val => {
-      if ((val.id == (count - 1))){
-        setSongPlay(val)
-        setCount(val.id)
+    songs.map((val) => {
+      if (val.id == count - 1) {
+        setSongPlay(val);
+        setCount(val.id);
       }
-    })
+    });
   };
 
   const handlePlay = () => {
@@ -55,7 +53,7 @@ const PlayerContent = ({ song, songs }) => {
   };
   useEffect(() => {
     handlePlay();
-    setSongPlay(song)
+    setSongPlay(song);
   }, [song]);
 
   const toggleMute = () => {
@@ -69,18 +67,18 @@ const PlayerContent = ({ song, songs }) => {
   };
 
   const handleTime = (e) => {
-    ref.current.currentTime = e.target.value
-    setTimeLine(ref.current.currentTime)
+    ref.current.currentTime = e.target.value;
+    setTimeLine(ref.current.currentTime);
   };
 
-  useEffect(()=>{
-    setTimeLine(ref.current.currentTime)
-    setDurMusic(ref.current.duration)
-  })
+  useEffect(() => {
+    setDurMusic(ref.current.duration);
+  },[isPlaying]);
 
   setInterval(() => {
+    setDurMusic(ref.current.duration);
     setTimeLine(ref.current.currentTime);
-  }, 20);
+  }, 200);
 
   const handleVolume = (e) => {
     ref.current.volume = e.target.value / 100;
@@ -104,9 +102,9 @@ const PlayerContent = ({ song, songs }) => {
           max={durMusic}
           value={timeLine}
           onChange={handleTime}
-          className="w-full absolute top-[-40%] left-0 timeline"
+          className="absolute top-[-38%] left-0 timeline"
         />
-        <div className="flex w-full justify-start">
+        <div className="flex absolute z-10 w-full justify-start">
           <div className="flex items-center gap-x-4">
             <MediaItem song={songPlay} />
             <LikeButton songId={songPlay.id} />
@@ -122,6 +120,8 @@ const PlayerContent = ({ song, songs }) => {
             w-full
             justify-end
             items-center
+            absolute
+            z-50
           "
         >
           <div
@@ -136,6 +136,11 @@ const PlayerContent = ({ song, songs }) => {
               bg-white
               p-1
               cursor-pointer
+            absolute
+            z-50
+            left-[80%]
+            top-[20%]
+            translate-y-[30%]
             "
           >
             <Icon size={30} className="text-black" />
@@ -162,6 +167,10 @@ const PlayerContent = ({ song, songs }) => {
               cursor-pointer
               hover:text-white
               transition
+            absolute
+            z-50
+            left-[45%]
+            -translate-x-[50%]
             "
           />
           <div
@@ -176,6 +185,12 @@ const PlayerContent = ({ song, songs }) => {
               bg-white
               p-1
               cursor-pointer
+            absolute
+            z-50
+            left-[50%]
+            top-[50%]
+            -translate-x-[50%]
+            -translate-y-[50%]
             "
           >
             <Icon size={30} className="text-black" />
@@ -188,11 +203,15 @@ const PlayerContent = ({ song, songs }) => {
               cursor-pointer
               hover:text-white
               transition
+            absolute
+            z-50
+            left-[55%]
+            -translate-x-[50%]
             "
           />
         </div>
 
-        <div className="hidden md:flex w-full justify-end pr-2">
+        <div className="hidden absolute z-50 top-[50%] left-[80%] md:left-[85%] lg:left-[90%] xl:left-[94%] -translate-y-1/2 md:flex w-full pr-2">
           <div className="flex items-center gap-x-2 w-[120px]">
             <VolumeIcon
               onClick={toggleMute}
