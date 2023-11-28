@@ -84,6 +84,8 @@ const PlayerContent = ({ song, songs }) => {
     ref.current.volume = e.target.value / 100;
   };
 
+  console.log('last version');
+
   return (
     <>
       <motion.div
