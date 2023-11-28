@@ -84,7 +84,7 @@ const PlayerContent = ({ song, songs }) => {
     ref.current.volume = e.target.value / 100;
   };
 
-  console.log('last version');
+  console.log('latest');
 
   return (
     <>
@@ -99,13 +99,16 @@ const PlayerContent = ({ song, songs }) => {
         }}
         className="grid grid-cols-2 md:grid-cols-3 h-full relative"
       >
+        <div className="absolute top-[-38%] left-0 !w-screen timeline">
         <Sliders
           min={0}
           max={durMusic}
           value={timeLine}
           onChange={handleTime}
-          className="absolute top-[-38%] left-0 w-screen w-full timeline"
+          // className="absolute top-[-38%] left-0 w-screen w-full timeline"
+          className="w-full"
         />
+        </div>
         <div className="flex absolute z-10 w-full justify-start">
           <div className="flex items-center gap-x-4">
             <MediaItem song={songPlay} />
