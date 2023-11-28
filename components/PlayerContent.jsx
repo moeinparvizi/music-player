@@ -102,7 +102,7 @@ const PlayerContent = ({ song, songs }) => {
           max={durMusic}
           value={timeLine}
           onChange={handleTime}
-          className="absolute top-[-38%] left-0 timeline"
+          className="absolute top-[-38%] left-0 w-screen w-full timeline"
         />
         <div className="flex absolute z-10 w-full justify-start">
           <div className="flex items-center gap-x-4">

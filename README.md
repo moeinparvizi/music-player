@@ -85,8 +85,7 @@ new project build with react & nextjs , have many components full Responsive & f
 ### Built With
 
 - [![html][html5]][HTML5]
-- [![CSS3][CSS3]][CSS3]
-- [![SASS][SASS]][SASS]
+- [![TailwindCSS][TailwindCSS]][TailwindCSS]
 - [![JavaScript][JavaScript]][JavaScript]
 - [![React.js][React.js]][React.js]
 - [![Next.js][Next.js]][Next.js]
