@@ -97,14 +97,14 @@ const PlayerContent = ({ song, songs }) => {
           opacity: 1,
           y: 0,
         }}
-        className="grid grid-cols-2 md:grid-cols-3 h-full"
+        className="grid grid-cols-2 md:grid-cols-3 h-full relative"
       >
         <Sliders
           min={0}
           max={durMusic}
           value={timeLine}
           onChange={handleTime}
-          className="w-full absolute top-[-20%] left-0 timeline"
+          className="w-full absolute top-[-40%] left-0 timeline"
         />
         <div className="flex w-full justify-start">
           <div className="flex items-center gap-x-4">
