@@ -12,7 +12,7 @@
     "title" : "magic",
     "albume" : "ghost stories",
     "artist" : "coldplay",
-    "audio" : "/audios/coldplay-magic.mp3",
+    "audio" : "/audios/magic-coldplay.flac",
     "image" : "/images/songs/magic.jpeg"
   },
   {
@@ -20,7 +20,7 @@
     "title" : "alone again",
     "albume" : "after hours",
     "artist" : "the weekend",
-    "audio" : "/audios/weekend-anlone-again.m4a",
+    "audio" : "/audios/weekend-alone-again.m4a",
     "image" : "/images/songs/alone-again.jpeg"
   },
   {
