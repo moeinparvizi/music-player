@@ -89,7 +89,7 @@ new project build with react & nextjs , have many components full Responsive & f
 - [![SASS][SASS]][SASS]
 - [![JavaScript][JavaScript]][JavaScript]
 - [![React.js][React.js]][React.js]
-- [![nextjs][nextjs][nextjs]]
+- [![Next.js][Next.js]][Next.js]
 - [framer-motion](https://framer.com/motion)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
