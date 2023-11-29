@@ -13,9 +13,6 @@ moein parvizi
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/music-player">
-    <img src="assets/images/me.jpg" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">music player</h3>
 
@@ -60,6 +57,9 @@ moein parvizi
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
+
+![Screenshot from 2023-11-29 22-52-46](https://github.com/moeinparvizi/music-player/assets/38692466/a1051b80-c7ee-4cc7-9a78-3191c49a8574)
+![Screenshot from 2023-11-29 22-56-23](https://github.com/moeinparvizi/music-player/assets/38692466/d12ec9c0-664a-4760-b4c6-89c834fc6fb9)
 
 Hints :
 
